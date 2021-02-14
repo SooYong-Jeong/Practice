@@ -168,4 +168,23 @@ print(num)
 '''
 
 cabinet = {3:"정수용", 100:"홍길동"}
-print(cabiner[3])
+# print(cabinet[3])   #값이 없는경우 프로그램 종료
+# print(cabinet[100])
+
+# print(cabinet.get(3)) #값이 없는경우 넘어감
+
+print(3 in cabinet)
+print(5 in cabinet)
+
+cabinet[50] = "신규"
+print(cabinet)
+
+del cabinet[100]  # 지우기
+print(cabinet)
+
+print(cabinet.keys())
+print(cabinet.values())
+print(cabinet.items())
+
+cabinet.clear()
+print(cabinet)
