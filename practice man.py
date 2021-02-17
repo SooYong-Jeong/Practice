@@ -1,4 +1,4 @@
-#region print
+#region Print
 '''
 print(5)
 print(-5)
@@ -19,7 +19,7 @@ print(not 1>10)
 print(not 1<10)
 '''
 #endregion
-#region variable
+#region Variable
 '''
 name = "정수용"
 sex = "남"
@@ -43,13 +43,13 @@ station = "인천공항"
 print(station + "행 열차가 들어오고 있습니다.")
 '''
 #endregion
-#region calculation
+#region Calculation
 '''
 print(2**10)
 print(100//5)
 '''
 #endregion
-#region maxminrandom
+#region Maxminrandom
 '''
 print(abs(-1))      #절댓값
 print(pow(2, 4))    #지수
@@ -81,7 +81,7 @@ from random import *
 print("오프라인 스터디 모임 날짜는 매월"+ str(randrange(4, 29)) +"일로 선정되었습니다")
 '''
 #endregion
-#region sentence
+#region Sentence
 '''
 se = '가나다라마바사'
 se2 = "가나다라마바사"
@@ -95,7 +95,7 @@ print(se2)
 print(se3)
 '''
 #endregion
-#region slicing
+#region Slicing
 '''
 per = "980119-1118011"
 
@@ -108,7 +108,7 @@ print("뒷자리 : " + per[7:])        #끝까지
 print("뒷자리 : " + per[-7:])       #뒤부터
 '''
 #endregion
-#region sentence function
+#region Sentence function
 '''
 python = "Python is Greatn"
 print(python.lower())       #전부 소문자
@@ -124,7 +124,7 @@ print(python.find("java"))  #문자찾기(없다면 -1을 반환)
 print(python.count("n"))    #문자횟수
 '''
 #endregion
-#region sentence format
+#region Sentence format
 '''
 print("%d" % 30)
 print("%s" % "정수용")
@@ -161,7 +161,7 @@ print(site_1)
 print(PW)
 '''
 #endregion
-#region list
+#region List
 '''
 subway = [0,2,3]
 print(subway.index(2))
@@ -194,7 +194,7 @@ num.extend(subway)
 print(num)
 '''
 #endregion
-#region cabinet
+#region Cabinet
 '''
 cabinet = {3:"정수용", 100:"홍길동"}
 # print(cabinet[3])   #값이 없는경우 프로그램 종료
