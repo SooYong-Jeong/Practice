@@ -219,4 +219,38 @@ cabinet.clear()
 print(cabinet)
 '''
 #endregion
+#region Tuple
+'''
+menu = ("제육", "라면")
+print(menu[0])
+print(menu[1])
 
+name, age, hobby = "정수용", 24, "코딩"
+print(name, age, hobby)
+'''
+#endregion
+#region Set
+#중복 안됨, 순서 없음
+'''
+my_set = {1,2,3,3,3}
+print(my_set)
+
+java = {"갑", "을", "병", "정"}
+python = set(["을", "정"])
+#교집합
+print(java & python)
+print(java.intersection(python))
+#합집합
+print(java | python)
+print(java.union(python))
+#차집합
+print(java - python)
+print(java.difference(python))
+#추가
+python.add("무")
+print(python)
+#삭제
+java.remove("을")
+print(java)
+'''
+#endregion
