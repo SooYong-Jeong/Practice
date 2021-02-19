@@ -254,4 +254,32 @@ java.remove("을")
 print(java)
 '''
 #endregion
-#추가추가
+#region Change
+'''
+menu = {"커피", "우유", "쥬스"}
+print(menu, type(menu))
+
+menu = list(menu)
+print(menu, type(menu))
+
+menu = tuple(menu)
+print(menu, type(menu))
+'''
+#endregion
+#region Quiz4
+'''
+from random import *
+ID = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+#ID = range(1, 21) 1부터 20까지 숫자를 생성
+#ID = list(ID) list형으로 변환
+shuffle(ID)
+print("-- 당첨자 발표 --")
+print("치킨 당첨자 : ", ID.pop())
+print("커피 당첨자 : ", sample(ID, 3))
+print("-- 축하합니다 --")
+print(ID)
+'''
+#endregion
+#region If
+
+#endregion
