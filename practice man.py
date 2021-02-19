@@ -281,5 +281,22 @@ print(ID)
 '''
 #endregion
 #region If
+'''
+weather = input("today weather?")
+if weather == "rain" or weather == "snow":
+    print("umbrella")
+elif weather == "dust":
+    print("mask")
+else:
+    print("-")
 
+temp = int(input("temp?"))
+
+if 30 <= temp:
+    print("too hot")
+elif 10 <= temp < 30:
+    print("good")
+else:
+    print("too cold")
+'''
 #endregion
