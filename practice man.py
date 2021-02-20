@@ -300,3 +300,35 @@ else:
     print("too cold")
 '''
 #endregion
+#region For
+'''
+for ex in range(6):
+    print("number : {0}".format(ex))
+for ex in [0,1,2,3,4,5]:
+    print("number : {0}".format(ex))
+for ex in range(1,6):
+    print("number : {0}".format(ex))
+
+user = ["A","B","C"]
+for customer in user:
+    print("{0}, thanks.".format(customer))
+    '''
+#endregion
+#region while
+'''
+user = "A"
+index = 5
+while index >= 1:
+    print("{0}, ready. {1} number.".format(user, index))
+    index -= 1
+    if index == 0:
+        print("user no.")
+lndex = 1
+while True:
+    print("{0}, ready. {1} number.".format(user, lndex))
+    lndex += 1
+    if lndex == 5:
+        print("user no.")
+        break
+    '''
+#endregion
