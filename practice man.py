@@ -357,3 +357,15 @@ students = [len(i) for i in students]
 print(students)
 '''
 #endregion
+#region Quiz5
+from random import *
+matching = 0
+for coustomer_matching in range(50):
+    i = randrange(5, 51)
+    if i <= 15:
+        print("[O] {0}번째 손님 (소요시간 : {1}분)".format(coustomer_matching,i))
+        matching += 1
+    else:
+        print("[ ] {0}번째 손님 (소요시간 : {1}분)".format(coustomer_matching,i))
+print("총 탑승 승객 : {0}명".format(matching))
+#endregion
