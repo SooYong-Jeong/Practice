@@ -108,7 +108,7 @@ print("뒷자리 : " + per[7:])        #끝까지
 print("뒷자리 : " + per[-7:])       #뒤부터
 '''
 #endregion
-#region Sentence function
+#region Sentence_function
 '''
 python = "Python is Greatn"
 print(python.lower())       #전부 소문자
@@ -124,7 +124,7 @@ print(python.find("java"))  #문자찾기(없다면 -1을 반환)
 print(python.count("n"))    #문자횟수
 '''
 #endregion
-#region Sentence format
+#region Sentence_format
 '''
 print("%d" % 30)
 print("%s" % "정수용")
@@ -331,4 +331,29 @@ while True:
         print("user no.")
         break
     '''
+#endregion
+#region Continue
+'''
+absent = [2, 5]
+for student in range(1,11):
+    if student in absent:
+        continue
+    print("{0} student".format(student))
+    '''
+#endregion
+#region One_Line_For
+'''
+students = range(1,6)
+print(students)
+students = [i+100 for i in students]
+print(students)
+
+students = ["QWRDASF", "QWFD AWEQWE", " QWES"]
+
+students = [i.lower() for i in students]
+print(students)
+
+students = [len(i) for i in students]
+print(students)
+'''
 #endregion
