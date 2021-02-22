@@ -398,10 +398,11 @@ print(balance)
 #endregion
 #region Default
 
+'''
 def profile(name, age = 24, sex = "female"):
     print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
 profile(name = "정수용", sex = "male")
-
+'''
 #endregion
 #region Variable_factor
 '''
