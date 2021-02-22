@@ -396,3 +396,9 @@ balance = withdraw(balance, 300)
 print(balance)
 '''
 #endregion
+#region Default
+def profile(name, age, sex = "male"):
+    print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
+profile("정수용", 24)
+
+#endregion
