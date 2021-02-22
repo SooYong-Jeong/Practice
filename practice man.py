@@ -314,7 +314,7 @@ for customer in user:
     print("{0}, thanks.".format(customer))
     '''
 #endregion
-#region while
+#region While
 '''
 user = "A"
 index = 5
@@ -397,8 +397,19 @@ print(balance)
 '''
 #endregion
 #region Default
-def profile(name, age, sex = "male"):
-    print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
-profile("정수용", 24)
 
+def profile(name, age = 24, sex = "female"):
+    print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
+profile(name = "정수용", sex = "male")
+
+#endregion
+#region Variable_factor
+'''
+def profile(name, age, sex, *language):
+    print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
+    for i in language:
+        print(i, end = " ")
+    print()
+profile("정수용", 24,  "male", "Java", "C", "C++", "Python")
+'''
 #endregion
