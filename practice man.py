@@ -358,7 +358,7 @@ print(students)
 '''
 #endregion
 #region Quiz5
-
+'''
 from random import *
 matching = 0
 for coustomer_matching in range(50):
@@ -369,8 +369,30 @@ for coustomer_matching in range(50):
     else:
         print("[ ] {0}번째 손님 (소요시간 : {1}분)".format(coustomer_matching,i))
 print("총 탑승 승객 : {0}명".format(matching))
-
+'''
 #endregion
 #region Function
+'''
+balance = 0
+money = 0
+def open_account():             #intro
+    print("new account.")
 
+def deposit(balance, money):    #입금함수
+    print("balance : {0}$".format(balance + money))
+    return balance + money
+
+def withdraw(balance, money):   #출금함수
+    if balance < money:
+        print("insufficient cash. balance : {0}$".format(balance))
+        return balance
+    else:
+        print("balance : {0}$".format(balance - money))
+        return balance - money
+
+open_account()
+balance = deposit(balance, 1000)
+balance = withdraw(balance, 300)
+print(balance)
+'''
 #endregion
