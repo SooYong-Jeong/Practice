@@ -459,4 +459,15 @@ answer = input("input anyone. : ")
 print(type(answer))#입력할땐 다  string으로 저장
 print("input things : " + answer)
 '''
-#endrefion
+#endregion
+#region Output
+print("{0: >10}".format(500))   #빈자리는 빈공간으로 두고, 오른쪽 정렬을 하되, 총 10자리 공간을 확보
+print("{0: >+10}".format(500))  #양수일땐 +,  음수일땐 -
+print("{0: >+10}".format(-500))
+print("{0:_<+10}".format(500))  #왼쪽정렬, 양수음수표시, 빈칸대신_, 자릿수확보
+print("{0:+,}".format(1000000000000000000000))  #3자리마다 콤마
+print("{0:^<+30,}".format(100000000000000))     #3자리마다 콤마, 왼쪽정렬, 양수음수표시, 빈칸대신^, 자릿수확보
+print("{0:f}".format(5/3))  #소숫점 출력
+print("{0:.2f}".format(5/3))  #소숫점 셋째자리에서 반올림해서 출력
+
+#endregion
