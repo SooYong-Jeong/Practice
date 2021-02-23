@@ -439,3 +439,24 @@ weight = round(std_weight(height, sex), 2)
 print("키{0}cm {1}의 표준 체중은 {2}kg 입니다.".format(height, sex, weight))
 '''
 #endregion
+#region Input_Output
+'''
+import sys
+print("Java", "Python","JavaScript", sep = ", ", end = "?")
+print("-???")
+print("Java", "Python","JavaScript", file = sys.stdout)#표준출력
+print("Java", "Python","JavaScript", file = sys.stderr)#표준에러
+
+score = {"국어":90, "수학":100, "영어":70}
+for subject, score in score.items():
+    #print(subject, score)
+    print(subject.ljust(9), str(score).rjust(4), sep = ":")#좌우정렬
+
+for num in range(1, 21):
+    print("대기번호 : " +str(num).zfill(3))# 빈공간 0으로 채우기
+
+answer = input("input anyone. : ")
+print(type(answer))#입력할땐 다  string으로 저장
+print("input things : " + answer)
+'''
+#endrefion
