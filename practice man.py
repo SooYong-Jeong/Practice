@@ -397,7 +397,6 @@ print(balance)
 '''
 #endregion
 #region Default
-
 '''
 def profile(name, age = 24, sex = "female"):
     print("name : {0}\nage : {1}\nsex : {2}".format(name, age, sex))
@@ -412,5 +411,18 @@ def profile(name, age, sex, *language):
         print(i, end = " ")
     print()
 profile("정수용", 24,  "male", "Java", "C", "C++", "Python")
+'''
+#endregion
+#region Local_Global
+'''
+gun = 10
+def checkpoint(soldiers):
+    global gun
+    gun = gun - soldiers
+    print("[func in]remain guns : {0}".format(gun))
+
+print("total guns : {0}".format(gun))
+checkpoint(2)
+print("remain guns : {0}".format(gun))
 '''
 #endregion
