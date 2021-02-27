@@ -516,3 +516,6 @@ for line in lines:
 score_file.close()
 '''
 #endregion
+#region Pickle
+
+#endregion
