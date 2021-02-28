@@ -548,3 +548,6 @@ with open("study.txt", "r", encoding="utf8") as study_file:#파일 읽기
     print(study_file.read())
 '''
 #endregion
+#region Quiz7
+
+#endregion
