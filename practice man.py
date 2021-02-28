@@ -517,5 +517,18 @@ score_file.close()
 '''
 #endregion
 #region Pickle
-
+import pickle
+'''
+profile_file = open("profile.pickle", "wb")
+profile = {"이름":"정수용", "나이":24, "취미":["축구", "골프", "코딩"]}
+print(profile)
+pickle.dump(profile, profile_file) # profile에 있는 정보를 file에 저장
+profile_file.close()
+'''
+'''
+profile_file = open("profile.pickle", "rb")
+profile = pickle.load(profile_file) # prifile에 있는 정보를 file로 불러오기
+print(profile)
+profile_file.close()
+'''
 #endregion
