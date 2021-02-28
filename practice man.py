@@ -517,8 +517,9 @@ score_file.close()
 '''
 #endregion
 #region Pickle
-import pickle
 '''
+import pickle
+
 profile_file = open("profile.pickle", "wb")
 profile = {"이름":"정수용", "나이":24, "취미":["축구", "골프", "코딩"]}
 print(profile)
@@ -530,5 +531,20 @@ profile_file = open("profile.pickle", "rb")
 profile = pickle.load(profile_file) # prifile에 있는 정보를 file로 불러오기
 print(profile)
 profile_file.close()
+'''
+#endregion
+#region With
+'''
+import pickle
+
+with open("profile.pickle", "rb") as profile_file:
+    print(pickle.load(profile_file))
+'''
+'''
+with open("study.txt", "w", encoding="utf8") as study_file:#파일 쓰기
+    study_file.write("study hard.")
+
+with open("study.txt", "r", encoding="utf8") as study_file:#파일 읽기
+    print(study_file.read())
 '''
 #endregion
