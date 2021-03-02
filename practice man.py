@@ -550,4 +550,5 @@ with open("study.txt", "r", encoding="utf8") as study_file:#파일 읽기
 #endregion
 #region Quiz7
 
+
 #endregion
