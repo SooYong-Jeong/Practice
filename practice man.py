@@ -549,6 +549,13 @@ with open("study.txt", "r", encoding="utf8") as study_file:#파일 읽기
 '''
 #endregion
 #region Quiz7
-
-
+'''
+for i in range(1,51):
+    with open(f"{i}주차.txt", "w", encoding="utf8") as report_file:
+        report_file.write("""
+        부서 : 
+        이름 : 
+        업무 요약 : 
+        """)
+        '''
 #endregion
