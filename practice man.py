@@ -552,10 +552,11 @@ with open("study.txt", "r", encoding="utf8") as study_file:#파일 읽기
 '''
 for i in range(1,51):
     with open(f"{i}주차.txt", "w", encoding="utf8") as report_file:
-        report_file.write("""
+        report_file.write(f"""
+        - {i} 주차 주간보고 -
         부서 : 
         이름 : 
         업무 요약 : 
         """)
-        '''
+'''
 #endregion
