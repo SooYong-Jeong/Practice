@@ -561,6 +561,17 @@ for i in range(1,51):
 '''
 #endregion
 #region Class
+'''
+class Unit:
+    def __init__(self, name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
+        print(f"{self.name} 이(가) 생성 되었습니다.")
+        print(f"체력 {self.hp}, 공격력 {self.damage}")
 
-
+marine1 = Unit("마린", 40, 5)
+marine2 = Unit("마린", 40, 5)
+tank1 = Unit("탱크", 150, 35)
+'''
 #end region
