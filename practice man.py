@@ -561,7 +561,7 @@ for i in range(1,51):
 '''
 #endregion
 #region Class
-'''
+
 class Unit:
     def __init__(self, name, hp, damage):
         self.name = name
@@ -573,5 +573,10 @@ class Unit:
 marine1 = Unit("마린", 40, 5)
 marine2 = Unit("마린", 40, 5)
 tank1 = Unit("탱크", 150, 35)
-'''
+tank1.siege = True
+
+if tank1.siege == True:
+    tank1.damage = 80
+    print(f"{tank1.name}은 시즈모드 상태 입니다, 공격력 {tank1.damage}")
+
 #end region
