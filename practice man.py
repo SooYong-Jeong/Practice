@@ -582,12 +582,27 @@ class AttackUnit(Unit):
         if self.hp <= 0:
             print(f"{self.name}이(가) 파괴되었습니다.")
 
+class Flyable:
+    def __init__(self, flying_speed):
+        self.flying_speed = flying_speed
+
+    def fly(self, name, location):
+        print(f"{name} : {location} 방향으로 날아갑니다. [속도 {self.flying_speed}]")
+
+class FlyableAttackUnit(AttackUnit, Flyable):
+    def __init__(self, name, hp, damage, flying_speed):
+        AttackUnit.__init__(self, name, hp, damage)
+        Flyable.__init__(self, flying_speed)               
+
+valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
+valkyrie.fly(valkyrie.name, "3시")
+'''
 firebat1 = AttackUnit("파이어벳", 50, 16)
 firebat1.attack("5시")
 
 firebat1.damaged(30)
 firebat1.damaged(25)
-
+'''
 '''
 marine1 = Unit("마린", 40, 5)
 marine2 = Unit("마린", 40, 5)
