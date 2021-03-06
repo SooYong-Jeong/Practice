@@ -563,13 +563,18 @@ for i in range(1,51):
 #region Class
 
 class Unit:
-    def __init__(self, name, hp):
+    def __init__(self, name, hp, speed):
         self.name = name
         self.hp = hp
+        self.speed = speed
+    def move(self, location):
+        print("[지상유닛이동]")
+        print(f"{self.name} : {location} 방향으로 이동합니다. [속도 {self.speed}]")
+
 
 class AttackUnit(Unit):
-    def __init__(self, name, hp, damage):
-        Unit.__init__(self, name, hp)
+    def __init__(self, name, hp, speed, damage):
+        Unit.__init__(self, name, hp, speed)
         self.damage = damage
 
     def attack(self, location):
@@ -591,11 +596,25 @@ class Flyable:
 
 class FlyableAttackUnit(AttackUnit, Flyable):
     def __init__(self, name, hp, damage, flying_speed):
-        AttackUnit.__init__(self, name, hp, damage)
-        Flyable.__init__(self, flying_speed)               
+        AttackUnit.__init__(self, name, hp, 0, damage)
+        Flyable.__init__(self, flying_speed)
 
+    def move(self, location):
+        print("[공중유닛이동]")
+        self.fly(self.name, location)               
+
+vulture = AttackUnit("벌쳐", 80, 10 ,20)
+
+battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+
+vulture.move("11시")
+battlecruiser.move("9시")
+
+
+'''
 valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
 valkyrie.fly(valkyrie.name, "3시")
+'''
 '''
 firebat1 = AttackUnit("파이어벳", 50, 16)
 firebat1.attack("5시")
