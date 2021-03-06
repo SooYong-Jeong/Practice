@@ -569,7 +569,29 @@ class Unit:
         self.damage = damage
         print(f"{self.name} 이(가) 생성 되었습니다.")
         print(f"체력 {self.hp}, 공격력 {self.damage}")
+class AttackUnit:
+    def __init__(self, name, hp, damage):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
 
+    def attack(self, location):
+        print(f"{self.name} : {location} 방향으로 적군을 공격합니다. 공격력 {self.damage}")
+
+    def damaged(self, damage):
+        print(f"{self.name} : {self.damage} 데이지를 입었습니다.")
+        self.hp -= damage
+        print(f"{self.name} : 현재 체력은 {self.hp} 입니다.")
+        if self.hp <= 0:
+            print(f"{self.name}이(가) 파괴되었습니다.")
+
+firebat1 = AttackUnit("파이어벳", 50, 16)
+firebat1.attack("5시")
+
+firebat1.damaged(30)
+firebat1.damaged(25)
+
+'''
 marine1 = Unit("마린", 40, 5)
 marine2 = Unit("마린", 40, 5)
 tank1 = Unit("탱크", 150, 35)
@@ -578,5 +600,5 @@ tank1.siege = True
 if tank1.siege == True:
     tank1.damage = 80
     print(f"{tank1.name}은 시즈모드 상태 입니다, 공격력 {tank1.damage}")
-
+'''
 #end region
