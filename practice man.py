@@ -563,16 +563,13 @@ for i in range(1,51):
 #region Class
 
 class Unit:
-    def __init__(self, name, hp, damage):
+    def __init__(self, name, hp):
         self.name = name
         self.hp = hp
-        self.damage = damage
-        print(f"{self.name} 이(가) 생성 되었습니다.")
-        print(f"체력 {self.hp}, 공격력 {self.damage}")
-class AttackUnit:
+
+class AttackUnit(Unit):
     def __init__(self, name, hp, damage):
-        self.name = name
-        self.hp = hp
+        Unit.__init__(self, name, hp)
         self.damage = damage
 
     def attack(self, location):
