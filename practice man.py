@@ -602,14 +602,25 @@ class FlyableAttackUnit(AttackUnit, Flyable):
     def move(self, location):
         print("[공중유닛이동]")
         self.fly(self.name, location)               
+class BulidingUnit(Unit):
+    def __init__(self, name, hp, location):
+        pass
 
+supply_depot = BulidingUnit("서플라이 디폿", 500, "7시")
+
+def game_start():
+    print("게임을 시작합니다.")
+
+def game_over():
+    pass
+'''
 vulture = AttackUnit("벌쳐", 80, 10 ,20)
 
 battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
 
 vulture.move("11시")
 battlecruiser.move("9시")
-
+'''
 
 '''
 valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
