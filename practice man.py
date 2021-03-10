@@ -626,6 +626,7 @@ battlecruiser.move("9시")
 valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
 valkyrie.fly(valkyrie.name, "3시")
 '''
+
 '''
 firebat1 = AttackUnit("파이어벳", 50, 16)
 firebat1.attack("5시")
@@ -633,6 +634,7 @@ firebat1.attack("5시")
 firebat1.damaged(30)
 firebat1.damaged(25)
 '''
+
 '''
 marine1 = Unit("마린", 40, 5)
 marine2 = Unit("마린", 40, 5)
