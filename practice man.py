@@ -613,6 +613,7 @@ def game_start():
 
 def game_over():
     pass
+
 '''
 vulture = AttackUnit("벌쳐", 80, 10 ,20)
 
