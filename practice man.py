@@ -601,7 +601,8 @@ class FlyableAttackUnit(AttackUnit, Flyable):
 
     def move(self, location):
         print("[공중유닛이동]")
-        self.fly(self.name, location)               
+        self.fly(self.name, location)  
+                     
 class BulidingUnit(Unit):
     def __init__(self, name, hp, location):
         pass
