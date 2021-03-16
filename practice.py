@@ -170,3 +170,6 @@ print(num)
 cabinet = {3:"정수용", 100:"홍길동"}
 print(cabiner[3])
 '''
+#region II
+
+#endregion
