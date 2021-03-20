@@ -647,4 +647,4 @@ if tank1.siege == True:
     tank1.damage = 80
     print(f"{tank1.name}은 시즈모드 상태 입니다, 공격력 {tank1.damage}")
 '''
-#end region
+#endregion
