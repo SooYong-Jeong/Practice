@@ -427,7 +427,7 @@ print("remain guns : {0}".format(gun))
 '''
 #endregion
 #region Quiz6
-'''
+
 def std_weight(height, sex):
     if sex == "남자":
         return pow(height/100, 2) * 22
@@ -437,7 +437,7 @@ sex = input("성별입력(\"남자\" or \"여자\")")
 height = int(input("키 입력(cm)"))
 weight = round(std_weight(height, sex), 2)
 print("키{0}cm {1}의 표준 체중은 {2}kg 입니다.".format(height, sex, weight))
-'''
+
 #endregion
 #region Input_Output
 '''
