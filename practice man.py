@@ -727,6 +727,7 @@ for house in house:
 '''
 #endregion
 #region Try
+'''
 try:
     print("나누기 전용 계산기")
     nums = []
@@ -742,4 +743,16 @@ except ZeroDivisionError as err:
 except Exception as err:
     print("알 수 없는 오류")
     print(err)
-#endregion1
+    '''
+#endregion
+#region
+try:
+    print("한자리 나누기 계산기")
+    num1 = int(input("1num : "))
+    num2 = int(input("2num : "))
+    if num1 >= 10 or num2 >= 10:
+        raise ValueError
+    print(f"{num1} / {num2} = {num1 / num2}")
+except ValueError:
+    print("error")
+#endregion
