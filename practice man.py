@@ -701,6 +701,7 @@ game_over()
 '''
 #endregion
 #region Quiz8
+'''
 class House:
     def __init__(self, location, house_type, deal_type, price, completion_year):
         self.location = location
@@ -721,8 +722,24 @@ house.append(gangnam_apt)
 house.append(mapo_off)
 house.append(songpa_vil)
 print(f"총 {len(house)}대의 매물이 있습니다.")
-
 for house in house:
     house.show_detail()
-
+'''
 #endregion
+#region Try
+try:
+    print("나누기 전용 계산기")
+    nums = []
+    nums.append(int(input("num1 : ")))
+    nums.append(int(input("num2 : ")))
+    #nums.append(int(nums[0]/nums[1]))
+
+    print(f"{nums[0]} / {nums[1]} = {nums[2]}")
+except ValueError:
+    print("에러가 발생했습니다.")
+except ZeroDivisionError as err:
+    print(err)
+except Exception as err:
+    print("알 수 없는 오류")
+    print(err)
+#endregion1
