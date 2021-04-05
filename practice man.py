@@ -561,6 +561,7 @@ for i in range(1,51):
 '''
 #endregion
 #region Class
+'''
 from random import *
 
 class Unit:
@@ -697,4 +698,31 @@ for unit in attack_units:
     unit.damaged(randint(5, 100))
 
 game_over()
+'''
+#endregion
+#region Quiz8
+class House:
+    def __init__(self, location, house_type, deal_type, price, completion_year):
+        self.location = location
+        self.house_type = house_type
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year
+
+    def show_detail(self):
+        print(f"{self.location} {self.house_type} {self.deal_type} {self.price} {self.completion_year}")
+
+house = []
+gangnam_apt = House("강남", "아파트", "매매", "10억", "2010년")
+mapo_off = House("마포", "오피스텔", "전세", "5억", "2007년")
+songpa_vil = House("송파", "빌라", "월세", "500/50", "2000년")
+
+house.append(gangnam_apt)
+house.append(mapo_off)
+house.append(songpa_vil)
+print(f"총 {len(house)}대의 매물이 있습니다.")
+
+for house in house:
+    house.show_detail()
+
 #endregion
