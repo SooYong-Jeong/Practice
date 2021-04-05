@@ -770,7 +770,7 @@ finally:
     print("Bye")
     '''
 #endregion
-#regoin Quiz9
+#region Quiz9
 '''
 class SoldOutError(Exception):
     pass
@@ -795,5 +795,38 @@ while(True):
     except SoldOutError:
         print("재고가 소진되어 더 이상 주문을 받지 않습니다.")
         break
+'''
+#endregion
+#region Module
+'''
+import theater_module
+theater_module.price(3)
+theater_module.price_moring(4)
+theater_module.price_soldier(5)
+'''
+'''
+import theater_module as mv
+mv.price(3)
+mv.price_moring(4)
+mv.price_soldier(5)
+'''
+'''
+from theater_module import*
+price(3)
+price_moring(4)
+price_soldier(5)
+'''
+'''
+from theater_module import price, price_moring
+price(3)
+price_moring(4)
+try:
+    price_soldier(5)
+except NameError as err:
+    print(err)
+'''
+'''
+from theater_module import price_soldier as price
+price(5)
 '''
 #endregion
