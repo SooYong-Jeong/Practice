@@ -766,5 +766,34 @@ except ValueError:
 except BigNumberError as err:
     print("Big number Error")
     print(err)
+finally:
+    print("Bye")
     '''
+#endregion
+#regoin Quiz9
+'''
+class SoldOutError(Exception):
+    pass
+chicken = 10
+wating = 1
+while(True):
+    try:
+        print(f"[남은 치킨 : {chicken}]")
+        order = int(input("치킨 몇 마리 주문하시겠습니까?"))
+        if order <= 0:
+            raise ValueError
+        if order > chicken:
+            print("재료가 부족합니다.")
+        else:
+            print(f"[대기번호 {wating}] {order} 마리 주문이 완료되었습니다.")
+            wating += 1
+            chicken -= order
+        if chicken == 0:
+            raise SoldOutError
+    except ValueError:
+        print("잘못된 값을 입력하였습니다.")
+    except SoldOutError:
+        print("재고가 소진되어 더 이상 주문을 받지 않습니다.")
+        break
+'''
 #endregion
