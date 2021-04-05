@@ -745,14 +745,26 @@ except Exception as err:
     print(err)
     '''
 #endregion
-#region
+#region Error
+'''
+class BigNumberError(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+    def __str__(self):
+        return self.msg
+
 try:
     print("한자리 나누기 계산기")
     num1 = int(input("1num : "))
     num2 = int(input("2num : "))
     if num1 >= 10 or num2 >= 10:
-        raise ValueError
+        raise BigNumberError(f"입력값 : {num1}, {num2}")
     print(f"{num1} / {num2} = {num1 / num2}")
 except ValueError:
     print("error")
+except BigNumberError as err:
+    print("Big number Error")
+    print(err)
+    '''
 #endregion
