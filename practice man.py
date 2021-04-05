@@ -427,7 +427,7 @@ print("remain guns : {0}".format(gun))
 '''
 #endregion
 #region Quiz6
-
+'''
 def std_weight(height, sex):
     if sex == "남자":
         return pow(height/100, 2) * 22
@@ -437,7 +437,7 @@ sex = input("성별입력(\"남자\" or \"여자\")")
 height = int(input("키 입력(cm)"))
 weight = round(std_weight(height, sex), 2)
 print("키{0}cm {1}의 표준 체중은 {2}kg 입니다.".format(height, sex, weight))
-
+'''
 #endregion
 #region Input_Output
 '''
@@ -561,16 +561,25 @@ for i in range(1,51):
 '''
 #endregion
 #region Class
+from random import *
 
 class Unit:
     def __init__(self, name, hp, speed):
         self.name = name
         self.hp = hp
         self.speed = speed
+        print(f"{name} 유닛이 생성되었습니다.")
+    
     def move(self, location):
         print("[지상유닛이동]")
         print(f"{self.name} : {location} 방향으로 이동합니다. [속도 {self.speed}]")
 
+    def damaged(self, damage):
+        print(f"{self.name} : {damage} 데미지를 입었습니다.")
+        self.hp -= damage
+        print(f"{self.name} : 현재 체력은 {self.hp} 입니다.")
+        if self.hp <= 0:
+            print(f"{self.name}이(가) 파괴되었습니다.")
 
 class AttackUnit(Unit):
     def __init__(self, name, hp, speed, damage):
@@ -579,13 +588,6 @@ class AttackUnit(Unit):
 
     def attack(self, location):
         print(f"{self.name} : {location} 방향으로 적군을 공격합니다. 공격력 {self.damage}")
-
-    def damaged(self, damage):
-        print(f"{self.name} : {self.damage} 데이지를 입었습니다.")
-        self.hp -= damage
-        print(f"{self.name} : 현재 체력은 {self.hp} 입니다.")
-        if self.hp <= 0:
-            print(f"{self.name}이(가) 파괴되었습니다.")
 
 class Flyable:
     def __init__(self, flying_speed):
@@ -601,50 +603,98 @@ class FlyableAttackUnit(AttackUnit, Flyable):
 
     def move(self, location):
         print("[공중유닛이동]")
-        self.fly(self.name, location)  
-                     
-class BulidingUnit(Unit):
-    def __init__(self, name, hp, location):
-        pass
+        self.fly(self.name, location)
 
-supply_depot = BulidingUnit("서플라이 디폿", 500, "7시")
+class Marine(AttackUnit):
+    def __init__(self):
+        AttackUnit.__init__(self, "마린", 40, 1, 5)
+
+    def strampack(self):
+        if self.hp > 10:
+            self.hp -= 10
+            print(f"{self.name} : 스팀팩을 사용합니다. (HP 10 감소)")
+        else:
+            print(f"{self.name} : 체력이 부족하여 스팀팩을 사용하지 않습니다.")
+
+
+class Tank(AttackUnit):
+    seize_developed = False
+    def __init__(self):
+        AttackUnit.__init__(self, "탱크", 150, 1, 35)
+        self.seize_mode = False
+
+    def set_seize_mode(self):
+        if Tank.seize_developed == False:
+            return
+        if self.seize_mode == False:
+            print(f"{self.name} : 시즈모드로 전환합니다.")
+            self.damage *= 2
+            self.seize_mode = True
+        
+        else:
+            print(f"{self.name} : 시즈모드를 해제합니다.")
+            self.damage /= 2
+            self.seize_mode = False
+
+class Wraith(FlyableAttackUnit):
+    def __init__(self):
+        FlyableAttackUnit.__init__(self, "레이스", 80, 20, 5)
+        self.clocked = False
+
+    def clocking(self):
+        if self.clocked == False:
+            print(f"{self.name} : 클로킹 모드를 설정합니다.")
+            self.clocked = True
+        
+        else:
+            print(f"{self.name} : 클로킹 모드를 해제합니다.")
+            self.clocked = False
 
 def game_start():
-    print("게임을 시작합니다.")
+    print("Computer : 한수요")
 
 def game_over():
-    pass
+    print("Computer : GG ")
+    print("SYSTEM : 상대가 나갔습니다.")
 
-'''
-vulture = AttackUnit("벌쳐", 80, 10 ,20)
+game_start()
 
-battlecruiser = FlyableAttackUnit("배틀크루저", 500, 25, 3)
+m1 = Marine()
+m2 = Marine()
+m3 = Marine()
 
-vulture.move("11시")
-battlecruiser.move("9시")
-'''
+t1 = Tank()
+t2 = Tank()
 
-'''
-valkyrie = FlyableAttackUnit("발키리", 200, 6, 5)
-valkyrie.fly(valkyrie.name, "3시")
-'''
+w1 = Wraith()
 
-'''
-firebat1 = AttackUnit("파이어벳", 50, 16)
-firebat1.attack("5시")
+attack_units = []
+attack_units.append(m1)
+attack_units.append(m2)
+attack_units.append(m3)
+attack_units.append(t1)
+attack_units.append(t2)
+attack_units.append(w1)
 
-firebat1.damaged(30)
-firebat1.damaged(25)
-'''
+for unit in attack_units:
+    unit.move("1시")
 
-'''
-marine1 = Unit("마린", 40, 5)
-marine2 = Unit("마린", 40, 5)
-tank1 = Unit("탱크", 150, 35)
-tank1.siege = True
+Tank.seize_developed = True
+print("탱크 시즈모드 개발완료.")
 
-if tank1.siege == True:
-    tank1.damage = 80
-    print(f"{tank1.name}은 시즈모드 상태 입니다, 공격력 {tank1.damage}")
-'''
+for unit in attack_units:
+    if isinstance(unit, Marine):
+        unit.strampack()
+    elif isinstance(unit, Tank):
+        unit.set_seize_mode()
+    elif isinstance(unit, Wraith):
+        unit.clocking()
+
+for unit in attack_units:
+    unit.attack("1시")
+
+for unit in attack_units:
+    unit.damaged(randint(5, 100))
+
+game_over()
 #endregion
