@@ -116,7 +116,7 @@ print(python.upper())       #전부 대문자
 print(python[0].isupper())  #해당글자 논리
 print(len(python))          #문자열 길이
 print(python.replace("Python", "Java")) #치환
-index = python.index("n")   #문자 찾기
+
 print(index)
 index = python.index("n", index + 1) #그다음번째
 print(index)
@@ -197,6 +197,7 @@ print(num)
 #region Cabinet
 '''
 cabinet = {3:"정수용", 100:"홍길동"}
+
 # print(cabinet[3])   #값이 없는경우 프로그램 종료
 # print(cabinet[100])
 
@@ -830,4 +831,4 @@ from theater_module import price_soldier as price
 price(5)
 '''
 #endregion
-print("hi")
+#print("hi")
